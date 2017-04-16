@@ -1,0 +1,22 @@
+.comment-text {
+    padding: 8px;
+    width: 300px;
+    overflow: overflow-x;
+
+}
+
+#comments {
+    overflow: scroll;
+    height: 350px;
+    display: inline-block;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
