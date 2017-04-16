@@ -1,0 +1,8 @@
+.media-text {
+	color: silver;
+}
+
+#filter .dropdown-menu {
+    position: static;
+    float: none;
+}
