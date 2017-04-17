@@ -48,13 +48,18 @@
 
       var player = videojs('#my-video');
       var markers = [
-        {time: 10, text: "Bad lunge! Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maecenas id lobortis est, at commodo orci. "},
-        {time: 15,  text: "Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maece"},
-        {time: 20,text: "Bad lunge! Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maecenas id lobortis est, at commodo orci. "},
-        {time: 25,  text: "Bad lunge! Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maecenas id lobortis est, at commodo orci. "},
-        {time: 35,  text: "Bad lunge! Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maecenas id lobortis est, at commodo orci. "},
-        {time: 40,  text: "Bad lunge! Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maecenas id lobortis est, at commodo orci. "},
-        {time: 45,  text: "Bad lunge! Your foot needs to be more in front. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam ligula, vestibulum sed elementum ut, gravida vitae ex. Maecenas id lobortis est, at commodo orci. "}
+        {time: 13, text: "advance is OK, knees could be more bent, maintain more distance between front and back foot"},
+        {time: 18,  text: " advance + lunge, too slow"},
+        {time: 39,text: "twitched before lunge. lunge bad, want arms to help"},
+        {time: 51,  text: " too many advances"},
+        {time: 131,  text: "advance, feet come too close together, basically walking in a straight line"},
+        {time: 165,  text: "flèche try, didn’t work out, PARRIED "},
+        {time: 183,  text: "lunge, too low on the knees, leg movement is too exaggerated, trying to feint"},
+        {time: 207,  text: "body too leaned forward"},
+        {time: 219,  text: "bad lunge, ankle folded underneath, could lead to injury, back foot should not leave ground"},
+        {time: 260,  text: "feet are too close, can’t retreat from this position"},
+        {time: 299,  text: " please do not kick your opponent"},
+        {time: 350,  text: " bad fleche, don’t collide into your opponent. why did you take a knee?"}
       ];
 
       //load the marker plugin
@@ -62,7 +67,7 @@
           markerTip:{
              display: true,
              text: function(marker){
-                return Math.floor(marker.time/60) + ":" + marker.time;
+                return Math.floor(marker.time/60) + ":" + marker.time%60;
              },
              time: function(marker) {
                  return marker.time;
@@ -72,7 +77,7 @@
              display: true,
              displayTime: 3,
              text: function(marker) {
-                return "This is an break overlay: " + marker.text;
+                return  marker.text;
              }
           },
           onMarkerReached: function(marker) {
@@ -82,6 +87,7 @@
             $(".compare-btn").css("display", "none");
             $("#" + marker.time).css("background-color", "yellow");
             $("#" + marker.time).removeClass("truncate");
+            $("#" + marker.time).focus();
             $("#compare-btn" + marker.time).css("display", "block");
           },
           markers: markers
@@ -89,7 +95,7 @@
       // insert marker list
       for(var i =0; i < markers.length; i++){
 
-         var item = $("<div class='comment-text truncate' id=" + markers[i].time + " data-index='"+i+"'><a href='#'>"+ Math.floor(markers[i].time/60) + ":" + markers[i].time + ": " + markers[i].text+"</a></div><button class='btn btn-info compare-btn' id='compare-btn" + markers[i].time + "' style='display:none'>Compare Self to Pro</button>");
+         var item = $("<div class='comment-text truncate' id=" + markers[i].time + " data-index='"+i+"'><a href='#'>"+ Math.floor(markers[i].time/60) + ":" + markers[i].time%60 + ": " + markers[i].text+"</a></div><button class='btn btn-info compare-btn' id='compare-btn" + markers[i].time + "' style='display:none'>Compare Self to Pro</button>");
          $("#comments").append(item);
       }
 
@@ -167,13 +173,13 @@
         <!-- Page content -->
         <div class="row">
           <div class="col-lg-12">
-            <h1> My Videos </h1>
+            <h1> Princeton Tournament Match #1 </h1>
             <br>
             <!-- Filter -->
             <div class="col-lg-8">
             <video id="my-video" class="video-js" controls preload="auto" width="720" height="480"
-            poster="test.jpg" data-setup="{}">
-              <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+            poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup="{}">
+              <source src="https://dl.dropboxusercontent.com/s/cyfg10lgpxr8swp/fencebad.mp4" type="video/mp4">
 
               <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a web browser that
