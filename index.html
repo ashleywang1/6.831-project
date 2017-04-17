@@ -30,9 +30,30 @@
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
   <script>
-  $(document).ready(function() {
-    // $("#menu-toggle").click();
+  // Menu Toggle Script
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
   });
+
+  // Search functionality
+  function search() {
+    // Declare variables
+    var input, filter, media, a, i;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    media = document.getElementsByClassName("media");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < media.length; i++) {
+        // a = media[i].getElementsByTagName("a")[0];
+        if (media[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            media[i].style.display = "";
+        } else {
+            media[i].style.display = "none";
+        }
+    }
+  }
   </script>
 
 </head>
@@ -63,11 +84,12 @@
 
         <!-- Header row -->
         <div class="row">
+          <!-- <div class="col-lg-1"></div> -->
           <div class="col-lg-9">
             <!-- Search bar at the top -->
-            <form action="" class="navbar-form navbar-left">
+            <form onsubmit="search()" align="center">
                <div class="input-group">
-                 <input type="Search" placeholder="Search..." class="form-control" />
+                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
                  <div class="input-group-btn">
                    <button class="btn btn-info">
                    <span class="glyphicon glyphicon-search"></span>
@@ -76,12 +98,14 @@
                </div>
             </form>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
-              Welcome, Jeb!
-              <img src="./images/profile.png" width="70px" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <img src="./images/profile.png" width="55px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+                <li class="dropdown-header">Welcome, Jeb Tree!</li>
+                <li role="separator" class="divider"></li>
                 <li><a href="./settings.html">Settings</a></li>
                 <li><a href="./logout.html">Logout</a></li>
               </ul>
@@ -98,21 +122,18 @@
             <br>
             <!-- Filter -->
             <div class="dropdown" id="filter">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Sort by
-                <span class="caret"></span>
+              <button class="btn btn-default dropdown-toggle" type="button" id="filterBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span id="currentFilter">Recent</span> <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Recent</a></li>
-                <li><a href="#">Upload date</a></li>
-                <li><a href="#">Tournament name</a></li>
+              <ul class="dropdown-menu" aria-labelledby="filterBtn">
+                <li><a href="#">Tournament (A-Z)</a></li>
               </ul>
             </div>
             <br>
           </div>
           <div class="col-lg-10">
             <!-- 1 -->
-            <div class="media">
+            <div class="media" id="a">
               <div class="media-left media-middle">
                 <a href="viewvideo.html">
                   <img class="media-object" src="./images/match1.jpg">
@@ -126,8 +147,10 @@
                   Cornell B1 was the opponent in the semifinals. Jeb had a tough 4-7 loss due to his opponents...
                 </span>
               </div>
-              <br>
+            </div>
+            <br>
             <!-- 2 -->
+            <div class="media" id="b">
               <div class="media-left media-middle">
                 <a href="viewvideo.html">
                   <img class="media-object" src="./images/match2.jpg">
@@ -142,7 +165,9 @@
                 </span>
               </div>
               <br>
+            </div>
             <!-- 3 -->
+            <div class="media" id="c">
               <div class="media-left media-middle">
                 <a href="viewvideo.html">
                   <img class="media-object" src="./images/match3.jpg">
@@ -157,7 +182,9 @@
                 </span>
               </div>
               <br>
+            </div>
             <!-- 4 -->
+            <div class="media" id="d">
               <div class="media-left media-middle">
                 <a href="viewvideo.html">
                   <img class="media-object" src="./images/match4.jpg">
@@ -173,22 +200,34 @@
               </div>
             </div>
             <br>
+            <!-- <center><button class="btn btn-default">
+              Load more
+            </button></center> -->
             <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- Menu Toggle Script -->
   <script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-  </script>
+    $('#filter .dropdown-menu a').click(function(evt){
+      if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
+        $("#a").remove().insertAfter("#d");
+        $("#b").remove().insertAfter("#d");
+        $("#c").remove().insertAfter("#d");
+      } else {
+        $("#b").remove().insertAfter("#a");
+        $("#c").remove().insertAfter("#b");
+        $("#d").remove().insertAfter("#c");
+      }
 
+      var old = $("#filter #filterBtn #currentFilter")[0].innerHTML;
+      $("#filter #filterBtn #currentFilter")[0].innerHTML = evt.currentTarget.innerHTML;
+      $("#filter .dropdown-menu li a")[0].innerHTML = old;
+    });
+  </script>
 </body>
+
 
 </html>
