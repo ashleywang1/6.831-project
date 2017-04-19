@@ -15,7 +15,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/simple-sidebar2.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
   
   <!-- Custom CSS for comments section-->
   <link href="css/comments.css" rel="stylesheet">
@@ -198,7 +198,7 @@
           </div>
         </div> -->
         <div class="row">
-          <div class="col-lg-8">
+          <div class="col-lg-9">
             <br>
             <!-- Filter -->
             <video id="my-video" class="video-js" controls preload="auto" width="720" height="465"
@@ -226,7 +226,7 @@
                 </ul>
               </div>
             </div>
-            <div class = "col-lg-4">
+            <div class = "col-lg-3">
                <!-- Comments component -->
               <div id="comments">
               </div>
@@ -243,6 +243,9 @@
   $(document).on('click', '.compare-btn', function() {
     window.location.href = "./compare.html";
   });
+
+  $('#profile').css('cursor', 'pointer');
+
 
   </script>
 

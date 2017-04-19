@@ -6,8 +6,7 @@
 
 #comments {
     overflow: scroll;
-    /*height: 350px;*/
-    width: 250px;
+    /*width: 250px;*/
     display: inline-block;
 
     border-style: solid;
@@ -15,7 +14,6 @@
     border-color: black;
     position: relative;
     padding: 10px;
-    margin-left: 70px;
     margin-top: 20px;
 }
 
