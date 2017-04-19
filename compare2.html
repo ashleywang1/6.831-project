@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>BFS</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/simple-sidebar2.css" rel="stylesheet">
+    <link href="css/compare.css" rel="stylesheet">
+  <!--videojs-->
+  <link href="http://vjs.zencdn.net/5.19.1/video-js.css" rel="stylesheet">
+  <link href="css/videojs.markers.css" rel="stylesheet">
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <!--video js -->
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>
+  <script src='js/videojs-markers.js'></script>
+  <!--videojs.framebyframe.js-->
+  <script src="js/videojs-framebyframe.js"></script>
+  <script src=></script>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function() {
+
+    var video = videojs('#my-video', {
+      controls: true,
+      autoplay: true,
+      preload: 'auto',
+      plugins: {
+        framebyframe: {
+          fps: 23.98,
+          steps: [{
+            text: '-1F',
+            step: -1,
+            index:3
+          }, {
+            text: '+1F',
+            step: 1,
+            index:4
+          }, ],
+        }
+      },
+      //removing volume control button
+      controlBar: {
+        volumeMenuButton: false,
+        remainingTimeDisplay:false
+      }
+    });
+    video.pause();
+
+  });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper" class="toggled">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="./index.html" id="highlight">My Videos</a>
+        </li>
+        <li>
+          <a href="./team.html">Team Videos</a>
+        </li>
+        <li>
+          <a href="./stats.html">My Stats</a>
+        </li>
+        <li>
+          <a href="./contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <!-- Header row -->
+        <div class="row">
+          <div class="col-lg-9">
+            <!-- Search bar at the top -->
+            <form onsubmit="search()" align="center">
+               <div class="input-group">
+                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+                 <div class="input-group-btn">
+                   <button class="btn btn-info">
+                   <span class="glyphicon glyphicon-search"></span>
+                   </button>
+                 </div>
+               </div>
+            </form>
+          </div>
+          <div class="col-lg-2"></div>
+          <div class="col-lg-1">
+            <!-- Profile icon at the top -->
+            <div class="dropdown">
+              <img src="./images/profile.png" width="55px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+                <li class="dropdown-header">Welcome, Jeb Tree!</li>
+                <li role="separator" class="divider"></li>
+                <li><a href="./settings.html">Settings</a></li>
+                <li><a href="./logout.html">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page content -->
+        <div class="row">
+          <div class="col-lg-10">
+            <h2> Lunge Comparison </h2>
+          </div>
+          <div class="col-lg-8">
+            <br>
+            <!-- Filter -->
+            <!--             <div class="col-lg-8">-->
+            <video id="my-video" class="video-js" controls preload="auto" width="1000" height="480" data-setup='{ "playbackRates": [0.25, 0.50, 0.75, 1] }'>
+              <source src="https://dl.dropboxusercontent.com/s/oirs3criyqcaxm1/comp1.mp4" type="video/mp4">
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>
+            <h2 id="overlay"> Jeb &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro </h2>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+</body>
+
+</html>
