@@ -202,15 +202,17 @@
           <div class="col-lg-8">
             <br>
             <!-- Filter -->
-            <video id="my-video" class="video-js" controls preload="auto" width="720" height="480"
-            poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup='{ "playbackRates": [0.5, 1, 2] }'>
-              <source src="https://dl.dropboxusercontent.com/s/cyfg10lgpxr8swp/fencebad.mp4" type="video/mp4">
+            <div class="videocontent">
+              <video id="my-video" class="video-js" data-setup='{"fluid": true}' vjs-16-9 controls preload="auto" 
+              poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup='{ "playbackRates": [0.5, 1, 2] }'>
+                <source src="https://dl.dropboxusercontent.com/s/cyfg10lgpxr8swp/fencebad.mp4" type="video/mp4">
 
-              <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-              </p>
-            </video>
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+              </video>
+            </div>
             <br>
               <div class="dropdown priv">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
