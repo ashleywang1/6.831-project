@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Better Faster Stronger</title>
+  <title>BFS</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,11 +43,14 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand">
+        <li>
           <a href="./index.html">My Videos</a>
         </li>
         <li>
-          <a href="./team.html">Team Videos</a>
+          <a href="./team.html" id="highlight">Team Videos</a>
+        </li>
+        <li>
+          <a href="./contact.html">Contact</a>
         </li>
       </ul>
     </div>
@@ -279,6 +282,8 @@
       $("#filter #filterBtn #currentFilter")[0].innerHTML = evt.currentTarget.innerHTML;
       evt.currentTarget.innerHTML = old;
     });
+    $('#profile').css('cursor', 'pointer');
+
   </script>
 
 </body>
