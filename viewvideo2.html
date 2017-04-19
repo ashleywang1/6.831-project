@@ -95,7 +95,7 @@
             $(".comment-text").addClass("truncate");
             $(".comment-text").removeAttr("style", "background-color");
             $(".compare-btn").css("display", "none");
-            $("#" + marker.time).css("background-color", "yellow");
+            $("#" + marker.time).css("background-color", "#CCFFFF");
             $("#" + marker.time).removeClass("truncate");
             $("#" + marker.time).focus();
             $("#compare-btn" + marker.time).css("display", "block");
@@ -121,7 +121,7 @@
          $(".compare-btn").css("display", "none");
 
          $(this).removeClass("truncate");
-         $(this).css("background-color", "yellow");
+         $(this).css("background-color", "#CCFFFF");
          $("#compare-btn" + markers[index].time).css("display", "block");
          player.currentTime(markers[index].time);
       });
