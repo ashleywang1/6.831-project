@@ -39,20 +39,16 @@
 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script>
 
             
    $(document).ready(function(){
 
-      var player = videojs('#my-video', {
-        controls: true,
-        autoplay: true,
-        preload: 'auto'
-      });
-
+      var player = videojs('#my-video');
       var markers = [
         {time: 13, text: "advance is OK, knees could be more bent, maintain more distance between front and back foot"},
         {time: 18,  text: " advance + lunge, too slow"},
@@ -70,11 +66,6 @@
 
       //load the marker plugin
        player.markers({
-          markerStyle: {
-           // 'width':'15px',
-           // 'height':'3px',
-           'background-color': '#31cbd5'
-          },
           markerTip:{
              display: true,
              text: function(marker){
@@ -96,18 +87,13 @@
             $(".comment-text").addClass("truncate");
             $(".comment-text").removeAttr("style", "background-color");
             $(".compare-btn").css("display", "none");
-            $("#" + marker.time).css("background-color", "#CCFFFF");
+            $("#" + marker.time).css("background-color", "yellow");
             $("#" + marker.time).removeClass("truncate");
             $("#" + marker.time).focus();
-            $('#comments').scrollTo($('#' + marker.time));
             $("#compare-btn" + marker.time).css("display", "block");
           },
           markers: markers
        });
-
-       //pausing player
-      player.pause();
-
       // insert marker list
       for(var i =0; i < markers.length; i++){
 
@@ -123,21 +109,25 @@
          $(".compare-btn").css("display", "none");
 
          $(this).removeClass("truncate");
-         $(this).css("background-color", "#CCFFFF");
+         $(this).css("background-color", "yellow");
          $("#compare-btn" + markers[index].time).css("display", "block");
          player.currentTime(markers[index].time);
       });
 
    });
+
    // listener for privacy dropdown
     $(function(){
+
       $(".dropdown-menu li a").click(function() {
         $(".dropdown-menu li a").css("background-color", "white");
-        $(".dropdown-menu li a").css("color", "black");
-        $(this).css("background-color", "#428bca");
-        $(this).css("color", "white");
-      });
+        $(this).css("background-color", "pink");
+
+
+
    });
+
+});
 
   </script>
 
@@ -169,11 +159,11 @@
 
         <!-- Header row -->
         <div class="row">
-          <div class="col-lg-9">
+          <div class="col-lg-10">
             <!-- Search bar at the top -->
-            <form onsubmit="search()" align="center">
+            <form action="" class="navbar-form navbar-left">
                <div class="input-group">
-                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+                 <input type="Search" placeholder="Search..." class="form-control" />
                  <div class="input-group-btn">
                    <button class="btn btn-info">
                    <span class="glyphicon glyphicon-search"></span>
@@ -182,14 +172,12 @@
                </div>
             </form>
           </div>
-          <div class="col-lg-2"></div>
-          <div class="col-lg-1">
+          <div class="col-lg-2">
             <!-- Profile icon at the top -->
             <div class="dropdown">
-              <img src="./images/profile.png" width="55px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
-                <li class="dropdown-header">Welcome, Jeb Tree!</li>
-                <li role="separator" class="divider"></li>
+              <img src="./images/profile.png" width="70px" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="./settings.html">Settings</a></li>
                 <li><a href="./logout.html">Logout</a></li>
               </ul>
@@ -199,14 +187,13 @@
 
         <!-- Page content -->
         <div class="row">
-          <div class="col-lg-10">
-            <h2> Princeton Tournament Match #1 </h2>
-          </div>
-          <div class="col-lg-8">
+          <div class="col-lg-12">
+            <h1> Princeton Tournament Match #1 </h1>
             <br>
             <!-- Filter -->
+            <div class="col-lg-8">
             <video id="my-video" class="video-js" controls preload="auto" width="720" height="480"
-            poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup='{ "playbackRates": [0.5, 1, 2] }'>
+            poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup="{}">
               <source src="https://dl.dropboxusercontent.com/s/cyfg10lgpxr8swp/fencebad.mp4" type="video/mp4">
 
               <p class="vjs-no-js">
@@ -214,16 +201,16 @@
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
               </p>
             </video>
-            <br>
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Team</a></li>
-                  <li class="dropdown-selected"><a href="#">Coaches</a></li>
-                  <li><a href="#">Only Me</a></li>
-                </ul>
-              </div>
+
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Coaches</a></li>
+                <li><a href="#">Only Me</a></li>
+              </ul>
+            </div>
             </div>
             <div class = "col-lg-4">
                <!-- Comments component -->
@@ -236,11 +223,16 @@
     </div>
 
   </div>
-  <script>
+
   <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
 
   $(document).on('click', '.compare-btn', function() {
-    window.location.href = "./compare2.html";
+    window.location.href = "./compare.html";
   });
 
   </script>
