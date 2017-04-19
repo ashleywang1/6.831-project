@@ -16,6 +16,7 @@
 
   <!-- Custom CSS -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/videos.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,11 +63,12 @@
 
         <!-- Header row -->
         <div class="row">
-          <div class="col-lg-10">
+          <!-- <div class="col-lg-1"></div> -->
+          <div class="col-lg-9">
             <!-- Search bar at the top -->
-            <form action="" class="navbar-form navbar-left">
+            <form onsubmit="search()" align="center">
                <div class="input-group">
-                 <input type="Search" placeholder="Search..." class="form-control" />
+                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
                  <div class="input-group-btn">
                    <button class="btn btn-info">
                    <span class="glyphicon glyphicon-search"></span>
@@ -75,12 +77,14 @@
                </div>
             </form>
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
-              <img src="./images/profile.png" width="70px" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <img src="./images/profile.png" width="55px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+                <li class="dropdown-header">Welcome, Jeb Tree!</li>
+                <li role="separator" class="divider"></li>
                 <li><a href="./settings.html">Settings</a></li>
                 <li><a href="./logout.html">Logout</a></li>
               </ul>
@@ -90,34 +94,164 @@
 
         <!-- Page content -->
         <div class="row">
-          <div class="col-lg-12">
-            <h1> My Videos </h1>
+          <div class="col-lg-10">
+            <h1> Team Videos </h1>
+          </div>
+          <div class="col-lg-3">
             <br>
             <!-- Filter -->
-            <div class="media">
-              <div class="media-left media-middle">
-                <a href="#">
-                  <img class="media-object" src="./images/profile.png">
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="./images/profile.png">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="./images/profile.png">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="./images/profile.png">
-              </a>
+            <div class="dropdown" id="filter">
+              <button class="btn btn-default dropdown-toggle" type="button" id="filterBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span id="currentFilter">Athlete</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="filterBtn">
+                <li><a href="#">Recent</a></li>
+                <li><a href="#">Tournament (A-Z)</a></li>
+              </ul>
             </div>
             <br>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+          </div>
+          <div class="col-lg-10">
+            <!-- 1 -->
+            <div class="media" id="a">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team1.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Princeton Tournament Match #1</h4></a>
+                <span class="media-text">
+                  Barack Ohama<br>
+                  2 months ago<br>
+                  Barack fought much better here and brilliantly managed the short distance to conserve energy and shut down his opponent. The match was scoreless until 30 seconds left...
+                </span>
+              </div>
+            </div>
+            <br>
+            <!-- 2 -->
+            <div class="media" id="b">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team2.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
+                <span class="media-text">
+                  Barack Ohama<br>
+                  3 months ago<br>
+                  Barack fought extremely well taking the match into overtime after pulling ahead towards the end of the second but giving up a point to tie the score. Barack made contact first...
+                </span>
+              </div>
+              <br>
+            </div>
+            <!-- 3 -->
+            <div class="media" id="c">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team3.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #2</h4></a>
+                <span class="media-text">
+                  Barack Ohama<br>
+                  3 months ago<br>
+                  Barack started against a strong opponent from Albany. Barack landed a beautiful hit that unfortunately didn't register...
+                </span>
+              </div>
+              <br>
+            </div>
+            <!-- 4 -->
+            <div class="media" id="d">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team4.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Yale Tournament Match #1</h4></a>
+                <span class="media-text">
+                  Benny Sanders<br>
+                  4 months ago<br>
+                  Benny was aggressive from the beginning and worked hard to defend his position and even make his opponent stumble multiple times through perfect timing. ....
+                </span>
+              </div>
+            </div>
+            <br>
+            <!-- 5 -->
+            <div class="media" id="e">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team5.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Yale Tournament Match #2</h4></a>
+                <span class="media-text">
+                  Benny Sanders<br>
+                  4 months ago<br>
+                  Once again, Benny fought impressively, keeping perfect control of the space, closing the distances when needed, and putting a lot of pressure on his bigger opponent.....
+                </span>
+              </div>
+            </div>
+            <br>
+            <!-- 6 -->
+            <div class="media" id="f">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team6.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
+                <span class="media-text">
+                  Jeb Tree<br>
+                  3 months ago<br>
+                  Jeb started off the match strong against Villanova with a 11-9 win - he opened up the score more with increased efficiency on the ....
+                </span>
+              </div>
+            </div>
+            <br>
+            <!-- 7 -->
+            <!-- <div class="media" id="g">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team7.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
+                <span class="media-text">
+                  Jeb Tree<br>
+                  3 months ago<br>
+                  Jeb started off the match strong against Villanova with a 11-9 win - he opened up the score more with increased efficiency on the ....
+                </span>
+              </div>
+            </div>
+            <br> -->
+            <!-- 8 -->
+            <!-- <div class="media" id="h">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team8.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
+                <span class="media-text">
+                  Jeb Tree<br>
+                  3 months ago<br>
+                  Jeb started off the match strong against Villanova with a 11-9 win - he opened up the score more with increased efficiency on the ....
+                </span>
+              </div>
+            </div>
+            <br> -->
+            <!-- <center><button class="btn btn-default">
+              Load more
+            </button></center> -->
+            <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
           </div>
         </div>
       </div>
@@ -125,12 +259,32 @@
 
   </div>
 
-  <!-- Menu Toggle Script -->
   <script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
+    $('#filter .dropdown-menu a').click(function(evt){
+      if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
+        $("#c").remove().insertAfter("#b");
+        $("#f").remove().insertAfter("#c");
+        $("#a").remove().insertAfter("#f");
+        $("#d").remove().insertAfter("#a");
+        $("#e").remove().insertAfter("#d");
+      } else if (evt.currentTarget.innerHTML == "Recent") {
+        $("#b").remove().insertAfter("#a");
+        $("#c").remove().insertAfter("#b");
+        $("#f").remove().insertAfter("#c");
+        $("#d").remove().insertAfter("#f");
+        $("#e").remove().insertAfter("#d");
+      } else {
+        $("#b").remove().insertAfter("#a");
+        $("#c").remove().insertAfter("#b");
+        $("#d").remove().insertAfter("#c");
+        $("#e").remove().insertAfter("#d");
+        $("#f").remove().insertAfter("#e");
+      }
+
+      var old = $("#filter #filterBtn #currentFilter")[0].innerHTML;
+      $("#filter #filterBtn #currentFilter")[0].innerHTML = evt.currentTarget.innerHTML;
+      evt.currentTarget.innerHTML = old;
+    });
   </script>
 
 </body>
