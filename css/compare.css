@@ -6,12 +6,12 @@
 /*Adapted from: https://css-tricks.com/text-blocks-over-image/;*/
 #overlay { 
    position: absolute; 
-   top: 40px; 
-   left: 50px; 
-   width: 100%;
+   top: 2px;  
+   width: 720px;
+   text-align:center;
    /*Adapted from: http://stackoverflow.com/questions/2570972/css-font-border;*/
   color: white;
-  font-size:20pt;
+  font-size:18pt;
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
