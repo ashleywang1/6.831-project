@@ -16,6 +16,7 @@ var FBFButton = videojs.extend(VjsButton, {
         // Calculate movement distance
         var dist = this.frameTime * this.step_size;
         this.player.currentTime(this.player.currentTime() + dist);
+        this.player.loadingSpinner.hide();
     },
 });
 
