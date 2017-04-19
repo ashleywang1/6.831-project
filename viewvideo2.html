@@ -129,6 +129,15 @@
       });
 
    });
+   // listener for privacy dropdown
+    $(function(){
+      $(".dropdown-menu li a").click(function() {
+        $(".dropdown-menu li a").css("background-color", "white");
+        $(".dropdown-menu li a").css("color", "black");
+        $(this).css("background-color", "#428bca");
+        $(this).css("color", "white");
+      });
+   });
 
   </script>
 
@@ -206,6 +215,15 @@
               </p>
             </video>
             <br>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Team</a></li>
+                  <li class="dropdown-selected"><a href="#">Coaches</a></li>
+                  <li><a href="#">Only Me</a></li>
+                </ul>
+              </div>
             </div>
             <div class = "col-lg-4">
                <!-- Comments component -->

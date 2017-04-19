@@ -41,6 +41,8 @@
   <script src="js/jquery.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script>
 
             
@@ -114,6 +116,19 @@
 
    });
 
+   // listener for privacy dropdown
+    $(function(){
+
+      $(".dropdown-menu li a").click(function() {
+        $(".dropdown-menu li a").css("background-color", "white");
+        $(this).css("background-color", "pink");
+
+
+
+   });
+
+});
+
   </script>
 
 </head>
@@ -186,9 +201,17 @@
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
               </p>
             </video>
-              </div>
-            <br>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Coaches</a></li>
+                <li><a href="#">Only Me</a></li>
+              </ul>
+            </div>
+            </div>
             <div class = "col-lg-4">
                <!-- Comments component -->
               <div id="comments">

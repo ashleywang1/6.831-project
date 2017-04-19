@@ -31,3 +31,12 @@
   margin-left: 80px;
   position: relative;
 }
+
+.dropdown {
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+.dropdown-selected {
+  color: white;
+  background-color: #428bca;
+}
