@@ -16,19 +16,6 @@
 }
 
 #rightfill {
-/*    z-index: 1000;
-    position: fixed;
-    right: 250px;
-    width: 0;
-    height: 100%;
-    margin-right: -250px;
-    overflow-y: auto;
-    background: #e6e6e6;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;*/
-
   position: absolute; 
   top: 0px; 
   left: 1040px; 
@@ -40,3 +27,7 @@
   font-size:20pt;
 /*  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 */}
+
+a {
+ color:#31B0D5;
+}
