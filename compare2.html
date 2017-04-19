@@ -12,7 +12,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="css/simple-sidebar2.css" rel="stylesheet">
-    <link href="css/compare.css" rel="stylesheet">
+  <link href="css/compare.css" rel="stylesheet">
   <!--videojs-->
   <link href="http://vjs.zencdn.net/5.19.1/video-js.css" rel="stylesheet">
   <link href="css/videojs.markers.css" rel="stylesheet">
@@ -48,18 +48,18 @@
           steps: [{
             text: '-1F',
             step: -1,
-            index:3
+            index: 3
           }, {
             text: '+1F',
             step: 1,
-            index:4
+            index: 4
           }, ],
         }
       },
       //removing volume control button
       controlBar: {
         volumeMenuButton: false,
-        remainingTimeDisplay:false
+        remainingTimeDisplay: false
       }
     });
     video.pause();
@@ -74,10 +74,10 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-          <a href="./index.html" id="highlight">My Videos</a>
+          <a href="./index.html">My Videos</a>
         </li>
         <li>
-          <a href="./team.html">Team Videos</a>
+          <a href="./team.html" id="highlight">Team Videos</a>
         </li>
         <li>
           <a href="./stats.html">My Stats</a>
@@ -91,20 +91,21 @@
       <div class="container-fluid">
         <!-- Header row -->
         <div class="row">
-          <div class="col-lg-9">
+          <div class="col-lg-8">
             <!-- Search bar at the top -->
             <form onsubmit="search()" align="center">
-               <div class="input-group">
-                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
-                 <div class="input-group-btn">
-                   <button class="btn btn-info">
-                   <span class="glyphicon glyphicon-search"></span>
-                   </button>
-                 </div>
-               </div>
+              <div class="input-group">
+                <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+                <div class="input-group-btn">
+                  <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
-          <div class="col-lg-2"></div>
+          <!--           <div class="col-lg-1"></div>
+ -->
           <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
@@ -118,29 +119,30 @@
             </div>
           </div>
         </div>
-
         <!-- Page content -->
         <div class="row">
           <div class="col-lg-10">
-            <h2> Lunge Comparison </h2>
+            <h3>Lunge Comparison </h3>
           </div>
           <div class="col-lg-8">
             <br>
             <!-- Filter -->
             <!--             <div class="col-lg-8">-->
-            <video id="my-video" class="video-js" controls preload="auto" width="1000" height="480" data-setup='{ "playbackRates": [0.25, 0.50, 0.75, 1] }'>
+            <video id="my-video" class="video-js" controls preload="auto" width="720" height="450" data-setup='{ "playbackRates": [0.25, 0.50, 0.75, 1] }'>
               <source src="https://dl.dropboxusercontent.com/s/oirs3criyqcaxm1/comp1.mp4" type="video/mp4">
               <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a web browser that
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
               </p>
             </video>
-            <h2 id="overlay"> Jeb &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro </h2>
+            <h2 id="overlay"> Jeb &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro </h2>
             <br>
+            <a href="viewvideo.html"> Back to <b>Princeton Tournament Match #1<b></a>
           </div>
         </div>
       </div>
     </div>
+    <div id="rightfill"><p>&nbsp;</p></div>
   </div>
   <!-- Menu Toggle Script -->
   <script>

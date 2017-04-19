@@ -6,11 +6,37 @@
 /*Adapted from: https://css-tricks.com/text-blocks-over-image/;*/
 #overlay { 
    position: absolute; 
-   top: 20px; 
-   left: 120px; 
+   top: 40px; 
+   left: 50px; 
    width: 100%;
    /*Adapted from: http://stackoverflow.com/questions/2570972/css-font-border;*/
   color: white;
   font-size:20pt;
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
+
+#rightfill {
+/*    z-index: 1000;
+    position: fixed;
+    right: 250px;
+    width: 0;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #e6e6e6;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;*/
+
+  position: absolute; 
+  top: 0px; 
+  left: 1040px; 
+  width:800px;
+  height: 100%;
+/*  margin-right:0px;
+*/   /*Adapted from: http://stackoverflow.com/questions/2570972/css-font-border;*/
+  background: #e6e6e6;
+  font-size:20pt;
+/*  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+*/}
