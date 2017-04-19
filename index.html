@@ -2,40 +2,28 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Better Faster Stronger</title>
-
+  <title>BFS</title>
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom CSS -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/simple-sidebar2.css" rel="stylesheet">
   <link href="css/videos.css" rel="stylesheet">
-
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
   <script>
-  // Menu Toggle Script
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-
   // Search functionality
   function search() {
     // Declare variables
@@ -46,26 +34,24 @@
 
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < media.length; i++) {
-        // a = media[i].getElementsByTagName("a")[0];
-        if (media[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            media[i].style.display = "";
-        } else {
-            media[i].style.display = "none";
-        }
+      // a = media[i].getElementsByTagName("a")[0];
+      if (media[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        media[i].style.display = "";
+      } else {
+        media[i].style.display = "none";
+      }
     }
   }
   </script>
-
 </head>
 
 <body>
   <div id="wrapper" class="toggled">
-
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-          <a href="./index.html">My Videos</a>
+        <li>
+          <a href="./index.html" id="highlight">My Videos</a>
         </li>
         <li>
           <a href="./team.html">Team Videos</a>
@@ -78,27 +64,25 @@
         </li>
       </ul>
     </div>
-
     <div id="page-content-wrapper">
       <div class="container-fluid">
-
         <!-- Header row -->
         <div class="row">
-          <!-- <div class="col-lg-1"></div> -->
-          <div class="col-lg-9">
+          <div class="col-lg-8">
             <!-- Search bar at the top -->
             <form onsubmit="search()" align="center">
-               <div class="input-group">
-                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
-                 <div class="input-group-btn">
-                   <button class="btn btn-info">
-                   <span class="glyphicon glyphicon-search"></span>
-                   </button>
-                 </div>
-               </div>
+              <div class="input-group">
+                <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+                <div class="input-group-btn">
+                  <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
-          <div class="col-lg-2"></div>
+          <!--           <div class="col-lg-1"></div>
+ -->
           <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
@@ -112,11 +96,10 @@
             </div>
           </div>
         </div>
-
         <!-- Page content -->
         <div class="row">
           <div class="col-lg-10">
-            <h1> My Videos </h1>
+            <h3> My Videos </h3>
           </div>
           <div class="col-lg-3">
             <br>
@@ -209,25 +192,25 @@
       </div>
     </div>
   </div>
-
   <script>
-    $('#filter .dropdown-menu a').click(function(evt){
-      if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
-        $("#a").remove().insertAfter("#d");
-        $("#b").remove().insertAfter("#d");
-        $("#c").remove().insertAfter("#d");
-      } else {
-        $("#b").remove().insertAfter("#a");
-        $("#c").remove().insertAfter("#b");
-        $("#d").remove().insertAfter("#c");
-      }
+  $('#filter .dropdown-menu a').click(function(evt) {
+    if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
+      $("#a").remove().insertAfter("#d");
+      $("#b").remove().insertAfter("#d");
+      $("#c").remove().insertAfter("#d");
+    } else {
+      $("#b").remove().insertAfter("#a");
+      $("#c").remove().insertAfter("#b");
+      $("#d").remove().insertAfter("#c");
+    }
 
-      var old = $("#filter #filterBtn #currentFilter")[0].innerHTML;
-      $("#filter #filterBtn #currentFilter")[0].innerHTML = evt.currentTarget.innerHTML;
-      $("#filter .dropdown-menu li a")[0].innerHTML = old;
-    });
+    var old = $("#filter #filterBtn #currentFilter")[0].innerHTML;
+    $("#filter #filterBtn #currentFilter")[0].innerHTML = evt.currentTarget.innerHTML;
+    $("#filter .dropdown-menu li a")[0].innerHTML = old;
+  });
+
+    $('#profile').css('cursor', 'pointer');
   </script>
 </body>
-
 
 </html>
