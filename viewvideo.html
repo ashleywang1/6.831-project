@@ -9,13 +9,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Better Faster Stronger</title>
+  <title>BFS</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/simple-sidebar2.css" rel="stylesheet">
   
   <!-- Custom CSS for comments section-->
   <link href="css/comments.css" rel="stylesheet">
@@ -145,12 +145,11 @@
 
 <body>
   <div id="wrapper" class="toggled">
-
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-          <a href="./index.html">My Videos</a>
+        <li>
+          <a href="./index.html" id="highlight">My Videos</a>
         </li>
         <li>
           <a href="./team.html">Team Videos</a>
@@ -163,26 +162,24 @@
         </li>
       </ul>
     </div>
-
     <div id="page-content-wrapper">
       <div class="container-fluid">
-
         <!-- Header row -->
         <div class="row">
-          <div class="col-lg-9">
+          <div class="col-lg-8">
             <!-- Search bar at the top -->
             <form onsubmit="search()" align="center">
-               <div class="input-group">
-                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
-                 <div class="input-group-btn">
-                   <button class="btn btn-info">
-                   <span class="glyphicon glyphicon-search"></span>
-                   </button>
-                 </div>
-               </div>
+              <div class="input-group">
+                <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+                <div class="input-group-btn">
+                  <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
-          <div class="col-lg-2"></div>
+
           <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
@@ -215,12 +212,12 @@
               </p>
             </video>
             <br>
-              <div class="dropdown">
+              <div class="dropdown priv">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="#">Team</a></li>
-                  <li class="dropdown-selected"><a href="#">Coaches</a></li>
+                  <li class="dropdown-selected priv"><a href="#">Coaches</a></li>
                   <li><a href="#">Only Me</a></li>
                 </ul>
               </div>

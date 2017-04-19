@@ -32,11 +32,11 @@
   position: relative;
 }
 
-.dropdown {
+.dropdown.priv {
   margin-top: 15px;
   margin-bottom: 100px;
 }
-.dropdown-selected {
+.dropdown-selected.priv {
   color: white;
   background-color: #428bca;
 }
