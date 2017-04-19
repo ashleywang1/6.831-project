@@ -4,6 +4,13 @@
     overflow: overflow-x;
 }
 
+.comment-text:hover {
+    color: #428bca;
+    cursor: hand;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 #comments {
     overflow: scroll;
     
@@ -35,7 +42,20 @@
   margin-top: 15px;
   margin-bottom: 100px;
 }
-.dropdown-selected.priv {
+
+.priv-choice {
+  padding: 8px;
+}
+
+.priv-choice:hover {
+  background-color: #CCFFFF;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.priv-choice.selected {
   color: white;
   background-color: #428bca;
 }
+
+
