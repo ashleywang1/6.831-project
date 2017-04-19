@@ -84,13 +84,13 @@
                  return marker.time;
               }
           },
-          breakOverlay:{
-             display: true,
-             displayTime: 3,
-             text: function(marker) {
-                return  marker.text;
-             }
-          },
+          // breakOverlay:{
+          //    display: true,
+          //    displayTime: 3,
+          //    text: function(marker) {
+          //       return  marker.text;
+          //    }
+          // },
           onMarkerReached: function(marker) {
             console.log(marker);
             $(".comment-text").addClass("truncate");
