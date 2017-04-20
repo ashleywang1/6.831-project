@@ -1,14 +1,13 @@
 .comment-text {
     padding: 8px;
-    width: 220px;
+    /*width: 220px;*/
     overflow: overflow-x;
 }
 
 #comments {
     overflow: scroll;
-    /*width: 250px;*/
+    width: 100%;
     display: inline-block;
-
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -18,7 +17,7 @@
 }
 
 .truncate {
-  width: 200px;
+  /*width: 250px;*/
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
