@@ -4,6 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+ /*
+ Heavily influenced by the layout of 6.831 readings: http://web.mit.edu/6.813/www/sp17/classes/01-usability/
+ */
+
  body {
     overflow-x: hidden;
  }

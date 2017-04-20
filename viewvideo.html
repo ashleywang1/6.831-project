@@ -25,7 +25,8 @@
   <!-- If you'd like to support IE8 -->
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-  <!--video js -->
+  <!--NOTE: We use the videojs library:  http://videojs.com/-->
+  <!--NOTE: We use the videojs-markers plugin for videojs: https://github.com/spchuang/videojs-markers -->
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>
   <script src='js/videojs-markers.js'></script>
@@ -53,6 +54,7 @@
         preload: 'auto'
       });
 
+      //Adapted from: https://github.com/spchuang/videojs-markers
       var markers = [
         {time: 13, text: "advance is OK, knees could be more bent, maintain more distance between front and back foot"},
         {time: 18,  text: " advance + lunge, too slow"},
@@ -71,8 +73,6 @@
       //load the marker plugin
        player.markers({
           markerStyle: {
-           // 'width':'15px',
-           // 'height':'3px',
            'background-color': '#31cbd5'
           },
           markerTip:{

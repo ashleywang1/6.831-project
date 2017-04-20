@@ -18,10 +18,12 @@
   <link href="css/videojs.markers.css" rel="stylesheet">
   <!-- If you'd like to support IE8 -->
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <!--NOTE: We use the videojs library: http://videojs.com/-->
   <!--video js -->
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>
   <script src='js/videojs-markers.js'></script>
+  <!--NOTE: We use the videojs-framebyframe plugin: https://github.com/erasche/videojs-framebyframe-->
   <!--videojs.framebyframe.js-->
   <script src="js/videojs-framebyframe.js"></script>
   <script src=></script>
@@ -38,6 +40,7 @@
   <script>
   $(document).ready(function() {
 
+    //Adapted from: https://erasche.github.io/videojs-framebyframe/
     var video = videojs('#my-video', {
       controls: true,
       autoplay: true,
