@@ -192,6 +192,7 @@
   </div>
   <script>
   $('#filter .dropdown-menu a').click(function(evt) {
+    $("#currentFilter").text(evt.currentTarget.innerHTML);
     if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
       $("#a").remove().insertAfter("#d");
       $("#b").remove().insertAfter("#d");

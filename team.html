@@ -259,6 +259,7 @@
 
   <script>
     $('#filter .dropdown-menu a').click(function(evt){
+      $("#currentFilter").text(evt.currentTarget.innerHTML);
       if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
         $("#c").remove().insertAfter("#b");
         $("#f").remove().insertAfter("#c");
