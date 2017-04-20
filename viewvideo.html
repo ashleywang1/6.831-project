@@ -25,7 +25,8 @@
   <!-- If you'd like to support IE8 -->
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-  <!--video js -->
+  <!--NOTE: We use the videojs library:  http://videojs.com/-->
+  <!--NOTE: We use the videojs-markers plugin for videojs: https://github.com/spchuang/videojs-markers -->
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>
   <script src='js/videojs-markers.js'></script>
@@ -53,6 +54,7 @@
         preload: 'auto'
       });
 
+      //Adapted from: https://github.com/spchuang/videojs-markers
       var markers = [
         {time: 13, text: "advance is OK, knees could be more bent, maintain more distance between front and back foot"},
         {time: 18,  text: " advance + lunge, too slow"},
@@ -71,8 +73,6 @@
       //load the marker plugin
        player.markers({
           markerStyle: {
-           // 'width':'15px',
-           // 'height':'3px',
            'background-color': '#31cbd5'
           },
           markerTip:{
@@ -84,13 +84,7 @@
                  return marker.time;
               }
           },
-          // breakOverlay:{
-          //    display: true,
-          //    displayTime: 3,
-          //    text: function(marker) {
-          //       return  marker.text;
-          //    }
-          // },
+
           onMarkerReached: function(marker) {
             console.log(marker);
             $(".comment-text").addClass("truncate");
@@ -195,8 +189,8 @@
           <div class="col-lg-8">
             <br>
             <!-- Filter -->
-            <video id="my-video" class="video-js" data-setup='{"fluid": true}' controls preload="auto" width="663"
-            poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup='{ "playbackRates": [0.5, 1, 2] }'>
+            <video id="my-video" class="video-js" controls preload="auto" width="663" poster="https://dl.dropboxusercontent.com/s/s8bo0smokjc9owi/fencebad.png" data-setup='{ "playbackRates": [0.5, 1, 2] , "fluid":true}'>
+
               <source src="https://dl.dropboxusercontent.com/s/cyfg10lgpxr8swp/fencebad.mp4" type="video/mp4">
 
               <p class="vjs-no-js">
@@ -221,7 +215,7 @@
               Jeb's first match was him facing a sneaky opponent that had instinctively good timing for finding points. Unfortunately, Jeb gave up a few points in the beginning and was forced to look for points aggressively. Jeb showed much better control and movement later, but his opponent was able to end with a bigger lead than the match reflected when Jeb tried hard to tie at the end (11-18 L). The way Jeb is fighting and moving about, I feel like the match would have been completely different if the opponent hadn't got the early lead. Working on blocking effectively will make a big difference against this type of opponent in the future.
             </p>
             <div class="dropdown priv">
-              Shared With <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Only Me <span class="caret"></span></button>
+              <b> Shared With </b> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Only Me <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="javascript:void(0);">Team</a></li>
                 <li class="dropdown-selected priv"><a href="javascript:void(0);">Coaches</a></li>
@@ -235,8 +229,6 @@
 
   </div>
   <script>
-  <!-- Menu Toggle Script -->
-
   $(document).on('click', '.compare-btn', function() {
     window.location.href = "./compare.html";
   });

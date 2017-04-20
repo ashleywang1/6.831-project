@@ -21,8 +21,7 @@
   left: 1040px; 
   width:800px;
   height: 100%;
-/*  margin-right:0px;
-*/   /*Adapted from: http://stackoverflow.com/questions/2570972/css-font-border;*/
+  /*Adapted from: http://stackoverflow.com/questions/2570972/css-font-border;*/
   background: #e6e6e6;
   font-size:20pt;
 /*  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;

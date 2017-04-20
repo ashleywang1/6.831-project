@@ -58,9 +58,21 @@
       <div class="container-fluid">
         <!-- Header row -->
         <div class="row">
-          <div class="col-lg-11">
+          <!-- <div class="col-lg-1"></div> -->
+          <div class="col-lg-8">
+            <!-- Search bar at the top -->
+            <form onsubmit="search()" align="center">
+               <div class="input-group">
+                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+                 <div class="input-group-btn">
+                   <button class="btn btn-info">
+                   <span class="glyphicon glyphicon-search"></span>
+                   </button>
+                 </div>
+               </div>
+            </form>
           </div>
-
+          <div class="col-lg-3"></div>
           <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
@@ -81,7 +93,7 @@
           </div>
           <div class="col-lg-8">
             <br>
-            <h3>Please email bfs@mit.edu with questions/comments! </h3>
+            <h4>Please email bfs@mit.edu with questions/comments! </h4>
 
           </div>
         </div>
