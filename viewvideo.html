@@ -130,13 +130,13 @@
 
    });
    // listener for privacy dropdown
-   $(function(){
-    $(".dropdown-menu li").click(function() {
-      console.log("hello")
-      $(".dropdown-menu li").removeClass("selected");
-      $(this).addClass("selected");
-    });
-  });
+    // $(function(){
+    //   $(".dropdown-menu li").click(function() {
+    //     console.log("hello")
+    //     $(".dropdown-menu li").removeClass("selected");
+    //     $(this).addClass("selected");
+    //   });
+    // });
 
   </script>
 
@@ -179,7 +179,7 @@
           <div class="col-lg-1">
             <!-- Profile icon at the top -->
             <div class="dropdown">
-              <img src="./images/profile.png" width="55px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <img src="./images/profile.png" height="34px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
                 <li class="dropdown-header">Welcome, Jeb Tree!</li>
                 <li role="separator" class="divider"></li>
@@ -213,19 +213,19 @@
         </div>
         <div class="row">
           <div class = "col-lg-8">
-            <div>
-              <h3> Princeton Tournament Match #1 </h3>
-              <h4> Jeb Tree  - Posted on January 11th, 2017</h4>
-              <br>
+            <h3> Princeton Tournament Match #1 </h3>
+            <h4> Jeb Tree  - Posted on January 11th, 2017</h4>
+            <br>
+            <h5> Coach Summary </h5>
+            <p>
               Jeb's first match was him facing a sneaky opponent that had instinctively good timing for finding points. Unfortunately, Jeb gave up a few points in the beginning and was forced to look for points aggressively. Jeb showed much better control and movement later, but his opponent was able to end with a bigger lead than the match reflected when Jeb tried hard to tie at the end (11-18 L). The way Jeb is fighting and moving about, I feel like the match would have been completely different if the opponent hadn't got the early lead. Working on blocking effectively will make a big difference against this type of opponent in the future.
-            </div>
+            </p>
             <div class="dropdown priv">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share With
-              <span class="caret"></span></button>
+              Shared With <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Only Me <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#">Team</a></li>
-                <li class="dropdown-selected priv"><a href="#">Coaches</a></li>
-                <li><a href="#">Only Me</a></li>
+                <li><a href="javascript:void(0);">Team</a></li>
+                <li class="dropdown-selected priv"><a href="javascript:void(0);">Coaches</a></li>
+                <li><a href="javascript:void(0);">Only Me</a></li>
               </ul>
             </div>
           </div>
@@ -243,6 +243,10 @@
 
   $('#profile').css('cursor', 'pointer');
 
+  $(".priv .dropdown-menu a").click(function(evt) {
+    var selection = evt.currentTarget.innerHTML;
+    $(".priv button").html(selection + " <span class=\"caret\"></span>");
+  });
 
   </script>
 
