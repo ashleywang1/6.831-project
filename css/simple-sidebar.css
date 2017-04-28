@@ -68,20 +68,20 @@
 }
 
 .sidebar-nav li {
-    text-indent: 30px;
-    line-height: 50px;
+    text-indent: 20px;
+    line-height: 40px;
     font-size:16px;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #737373;
+    color: #999999;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #31B0D5;
+    color: #5BC0DE;
     background: #dadada;
 }
 
@@ -93,7 +93,7 @@
 /*Heavily inspired by 6.831 reading material*/
 #highlight {
     color: white;
-    background: #31B0D5;
+    background: #5BC0DE;
 }
 
 .sidebar-nav > .sidebar-brand {
@@ -107,7 +107,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #31B0D5;
+    color: #5BC0DE;
     background: #dadada;
 }
 
@@ -137,8 +137,4 @@
         position: relative;
         margin-right: 0;
     }
-}
-
-a {
- color:#31B0D5;
 }

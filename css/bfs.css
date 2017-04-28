@@ -1,0 +1,64 @@
+/*Specialized button*/
+.btn-borderless {
+	background-color: #F8F9F9;
+	border: 0px solid transparent;
+	color: #808B96;
+}
+
+.btn-borderless:hover{
+	color: black;
+}
+
+.btn-borderless:active,
+.btn-borderless.active,
+.btn-borderless:focus,
+.btn-borderless:active:focus,
+.btn-borderless.active:focus,
+.btn-borderless.focus,
+.btn-borderless:active.focus,
+.btn-borderless.active.focus {
+	border: 0px solid transparent;
+	outline: none;
+}
+
+/*Header*/
+#headerContainer {
+	background-color: #F8F9F9;
+	height: 50px;
+	position: fixed;
+	z-index:1000;
+	outline: 1px solid #f0f0f0;
+}
+
+#header {
+	position: fixed;
+	transform: translateY(50%);
+}
+
+#searchBar {
+	margin-top: 8px;
+}
+
+#profile{
+	cursor: pointer;
+	margin-top: 8px;
+	margin-right: 40px;
+}
+
+#uploadVideo {
+	margin-top: 4px;
+}
+
+#notifications {
+	margin-top: 4px;
+}
+
+/*Page*/
+#page {
+	margin-top: 50px;
+}
+
+/*Video*/
+.media-text {
+	color: silver;
+}
