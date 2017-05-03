@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+  <meta name="6.813 User Interface Project" content="">
+  <meta name="Ashley Wang, Rui Song, Heeyoon Kim, Kely Qi" content="">
+  <title>Better. Faster. Stronger.</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/bfs.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" id="headerContainer" position="fixed">
+      <div class="col-md-2">
+        <!-- Menu Toggle -->
+        <div id="header">
+          <button id="menu-toggle" class="btn-borderless"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+          BFS
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Search bar at the top -->
+        <form id="searchBar" onsubmit="search()" align="center">
+           <div class="input-group">
+             <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+             <div class="input-group-btn">
+               <button class="btn btn-info">
+               <span class="glyphicon glyphicon-search"></span>
+               </button>
+             </div>
+           </div>
+        </form>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
+        <button id="uploadVideo" title="Upload" class="btn-lg btn-borderless"><span class="glyphicon glyphicon-upload"></span></button>
+        <button id="notifications" class="btn-lg btn-borderless dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span></button>
+        <ul class="dropdown-menu pull-right">
+          <li style="margin-left:10px;"class="dropdown-header">No new videos yet!</li>
+        </ul>
+      </div>
+      <div class="col-md-1">
+        <!-- Profile icon -->
+        <div id="profile" align="right">
+          <div class="dropdown-toggle" data-toggle="dropdown">
+            <img src="http://www.careerpilot.org.uk/images/profile-icon-lrg.png" height="34px">
+          </div>
+          <!-- https://cdn.dribbble.com/users/124355/screenshots/2199042/profile_teaser.png -->
+          <ul style="margin-right:40px; margin-top:9px;" class="dropdown-menu pull-right">
+            <li class="dropdown-header">Welcome, Jeb Tree!</li>
+            <li role="separator" class="divider"></li>
+            <li><a href="./settings.html">Settings</a></li>
+            <li><a href="./logout.html">Logout</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row" id="page">
+      <div id="wrapper" class="toggled">
+        <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+            <li>
+              <a href="./index.html">My Videos</a>
+            </li>
+            <li>
+              <a href="./team.html">Team Videos</a>
+            </li>
+            <li>
+              <a href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="page-content-wrapper">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Button Events
+    $(document).on('click', "#uploadVideo", function(evt){
+      window.location="https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE";
+    });
+    
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    
+    $('#filter .dropdown-menu a').click(function(evt) {
+      $("#currentFilter").text(evt.currentTarget.innerHTML);
+      if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
+        $("#a").remove().insertAfter("#d");
+        $("#b").remove().insertAfter("#d");
+        $("#c").remove().insertAfter("#d");
+      } else {
+        $("#b").remove().insertAfter("#a");
+        $("#c").remove().insertAfter("#b");
+        $("#d").remove().insertAfter("#c");
+      }
+    });
+  </script>
+</body>
+
+</html>
