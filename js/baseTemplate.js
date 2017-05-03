@@ -1,4 +1,4 @@
-function loadInHeader() {
+function loadInHeaderAndFooter() {
 	$('#headerContainer').load('baseTemplate.html #headerContainer', function() {
 	  // Header Button Events
 	  $(document).on('click', "#menu-toggle", function(evt) {
@@ -10,6 +10,7 @@ function loadInHeader() {
 	    window.location="https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE";
 	  });
 	});
+	$('#footerContainer').load('baseTemplate.html footer');
 }
 
 function loadInMenu(highlight_index) {

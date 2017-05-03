@@ -33,6 +33,18 @@
           <div class="col-lg-2"></div>
           <div class="col-lg-8">
             <!-- Page content goes here -->
+            <!-- Filter -->
+            <div class="dropdown" id="filter">
+              <button class="btn btn-default dropdown-toggle" type="button" id="filterBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span id="currentFilter">Athlete</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="filterBtn">
+                <li><a href="javascript:void(0);">Athlete</a></li>
+                <li><a href="javascript:void(0);">Tournament (A-Z)</a></li>
+                <li><a href="javascript:void(0);">Recent</a></li>
+              </ul>
+            </div>
+            <br>
             <!-- 1 -->
             <div class="media" id="a">
               <div class="media-left media-middle">
@@ -178,32 +190,36 @@
         </div>
       </div>
     </div>
+    <div class="row" id="footerContainer"></div>
   </div>
   <script src="js/baseTemplate.js"></script>
   <script>
-    $(".sidebar-nav a")[1].id = "highlight";
+    $(document).ready(function(e) {
+      loadInHeaderAndFooter();
+      loadInMenu(1);
 
-    $('#filter .dropdown-menu a').click(function(evt){
-      $("#currentFilter").text(evt.currentTarget.innerHTML);
-      if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
-        $("#c").remove().insertAfter("#b");
-        $("#f").remove().insertAfter("#c");
-        $("#a").remove().insertAfter("#f");
-        $("#d").remove().insertAfter("#a");
-        $("#e").remove().insertAfter("#d");
-      } else if (evt.currentTarget.innerHTML == "Recent") {
-        $("#b").remove().insertAfter("#a");
-        $("#c").remove().insertAfter("#b");
-        $("#f").remove().insertAfter("#c");
-        $("#d").remove().insertAfter("#f");
-        $("#e").remove().insertAfter("#d");
-      } else {
-        $("#b").remove().insertAfter("#a");
-        $("#c").remove().insertAfter("#b");
-        $("#d").remove().insertAfter("#c");
-        $("#e").remove().insertAfter("#d");
-        $("#f").remove().insertAfter("#e");
-      }
+      $('#filter .dropdown-menu a').click(function(evt){
+        $("#currentFilter").text(evt.currentTarget.innerHTML);
+        if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
+          $("#c").remove().insertAfter("#b");
+          $("#f").remove().insertAfter("#c");
+          $("#a").remove().insertAfter("#f");
+          $("#d").remove().insertAfter("#a");
+          $("#e").remove().insertAfter("#d");
+        } else if (evt.currentTarget.innerHTML == "Recent") {
+          $("#b").remove().insertAfter("#a");
+          $("#c").remove().insertAfter("#b");
+          $("#f").remove().insertAfter("#c");
+          $("#d").remove().insertAfter("#f");
+          $("#e").remove().insertAfter("#d");
+        } else {
+          $("#b").remove().insertAfter("#a");
+          $("#c").remove().insertAfter("#b");
+          $("#d").remove().insertAfter("#c");
+          $("#e").remove().insertAfter("#d");
+          $("#f").remove().insertAfter("#e");
+        }
+      });
     });
   </script>
 </body>
