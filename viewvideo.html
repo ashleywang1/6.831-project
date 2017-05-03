@@ -142,8 +142,15 @@
             expandComment(marker.time);
             player.play();
 
+
+
             setTimeout(function(){
-              condenseComments();
+              // condense this comment
+              $("#" + marker.time).addClass("truncate");
+              $("#" + marker.time).removeAttr("style", "background-color");
+              $("#compare-btn" + marker.time).css("display", "none");
+              $("#coach-contact" + marker.time).css("display", "none");
+
             }, 4000);
           },
           markers: markers
@@ -158,22 +165,12 @@
          $("#comments").append(item);
       }
 
-      $('#' + 13).removeClass("truncate");
-      $('#' + 13).css("background-color", "#CCFFFF");
-      $("#compare-btn13").css("display", "block");
-      $("#coach-contact13").css("display", "block");
-      $('#comments').scrollTo($('#13'));
-
-
-
-
       // set up click event
-      $(".comment-text").click(function(){
+      $(".comment-text").click(function() {
+         condenseComments();
          var index = $(this).data("index");
          var markerTime = markers[index].time;
-         condenseComments();
-         $(this).removeClass("truncate");
-         $(this).css("background-color", "#CCFFFF");
+         
          expandComment(markerTime);
          player.play();
       });
@@ -197,6 +194,8 @@
         player.currentTime(markerTime);
         $("#coach-contact" + markerTime).css("display", "block");
         $('#comments').scrollTo($('#' + markerTime));
+        $("#" + markerTime).removeClass("truncate");
+        $("#" + markerTime).css("background-color", "#CCFFFF");
       }
     });
 
