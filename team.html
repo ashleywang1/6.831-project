@@ -36,10 +36,10 @@
             <!-- Filter -->
             <div class="dropdown" id="filter">
               <button class="btn btn-default dropdown-toggle" type="button" id="filterBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span id="currentFilter">Athlete</span> <span class="caret"></span>
+                <span id="currentFilter">Athlete (A-Z)</span> <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="filterBtn">
-                <li><a href="javascript:void(0);">Athlete</a></li>
+                <li><a href="javascript:void(0);">Athlete (A-Z)</a></li>
                 <li><a href="javascript:void(0);">Tournament (A-Z)</a></li>
                 <li><a href="javascript:void(0);">Recent</a></li>
               </ul>
@@ -151,6 +151,11 @@
           <div class="col-lg-2"></div>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <center><button class="btn btn-default" type="button" id="loadMoreButton">
+        <span id="currentFilter">Load More</span>
+      </button></center>
     </div>
     <div class="row" id="footerContainer"></div>
   </div>
