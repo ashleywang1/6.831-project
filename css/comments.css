@@ -14,11 +14,9 @@
 #comments {
     overflow: scroll;
     width: 100%;
-    height: ;
     display: inline-block;
     position: relative;
-    padding: 10px;
-    margin-top: 20px;
+    /*padding: 10px;*/
 }
 
 .truncate {
@@ -62,4 +60,10 @@
   padding-bottom: 8px;
 }
 
+.videocontent {
 
+}
+
+.video-js .vjs-big-play-button {
+  display:inline;
+}
