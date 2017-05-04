@@ -42,7 +42,6 @@
            </div>
         </form>
       </div>
-      <div class="col-md-1"></div>
       <div class="col-md-2">
         <button id="uploadVideo" title="Upload" class="btn-lg btn-borderless"><span class="glyphicon glyphicon-upload"></span></button>
         <button id="notifications" class="btn-lg btn-borderless dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span></button>
@@ -51,15 +50,23 @@
         </ul>
       </div>
       <div class="col-md-1">
+        <div class="dropdown-toggle" data-toggle="dropdown">
+          <div id="warmWelcome"> Welcome, Jeb!</div>
+        </div>
+        <ul style="margin-top:50px;margin-left:4px;" class="dropdown-menu">
+          <li><a href="./settings.html">Settings</a></li>
+          <li><a href="./logout.html">Logout</a></li>
+        </ul>
+      </div>
+      <!-- https://cdn.dribbble.com/users/124355/screenshots/2199042/profile_teaser.png -->
+      <div class="col-md-1">
         <!-- Profile icon -->
         <div id="profile" align="right">
           <div class="dropdown-toggle" data-toggle="dropdown">
             <img src="http://www.careerpilot.org.uk/images/profile-icon-lrg.png" height="34px">
           </div>
           <!-- https://cdn.dribbble.com/users/124355/screenshots/2199042/profile_teaser.png -->
-          <ul style="margin-right:40px; margin-top:9px;" class="dropdown-menu pull-right">
-            <li class="dropdown-header">Welcome, Jeb Tree!</li>
-            <li role="separator" class="divider"></li>
+          <ul style="margin-top:9px;" class="dropdown-menu pull-right">
             <li><a href="./settings.html">Settings</a></li>
             <li><a href="./logout.html">Logout</a></li>
           </ul>

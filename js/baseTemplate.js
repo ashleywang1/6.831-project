@@ -13,8 +13,10 @@ function loadInHeaderAndFooter() {
 	$('#footerContainer').load('baseTemplate.html footer');
 }
 
-function loadInMenu(highlight_index) {
+function loadInMenu(highlight_index=null) {
 	$('#sidebar-wrapper').load('baseTemplate.html #sidebar-wrapper', function() {
-		$(".sidebar-nav a")[highlight_index].id = "highlight";
+		if (highlight_index != null) {
+			$(".sidebar-nav a")[highlight_index].id = "highlight";
+		}
 	});
 }

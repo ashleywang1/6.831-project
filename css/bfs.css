@@ -88,7 +88,10 @@
 #profile{
 	cursor: pointer;
 	margin-top: 8px;
-	margin-right: 40px;
+	margin-right: 0px;
+    position: absolute;
+    top: 0px;
+    width: 40px;
 }
 
 #uploadVideo {
@@ -97,6 +100,17 @@
 
 #notifications {
 	margin-top: 4px;
+}
+
+#warmWelcome {
+    cursor: pointer;
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 16px;
+    /*text-align: right;*/
+    vertical-align: text-bottom;
+    width: 80px;
+    font-size: 12px;
 }
 
 /*Page*/
@@ -108,3 +122,16 @@
 .media-text {
 	color: silver;
 }
+
+#videoContainer{
+    margin-top: 0px;
+}
+
+#menu-margin {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
