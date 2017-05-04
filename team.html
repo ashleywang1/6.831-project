@@ -2,100 +2,37 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>BFS</title>
-
+  <meta name="6.813 User Interface Project" content="">
+  <meta name="Ashley Wang, Rui Song, Heeyoon Kim, Kely Qi" content="">
+  <title>Better. Faster. Stronger.</title>
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom CSS -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link href="css/videos.css" rel="stylesheet">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
+  <link href="css/bfs.css" rel="stylesheet">
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    // $("#menu-toggle").click();
-  });
-  </script>
-
 </head>
 
 <body>
-  <div id="wrapper" class="toggled">
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <li>
-          <a href="./index.html">My Videos</a>
-        </li>
-        <li>
-          <a href="./team.html" id="highlight">Team Videos</a>
-        </li>
-        <li>
-          <a href="./contact.html">Contact</a>
-        </li>
-      </ul>
+  <div class="container-fluid">
+    <div class="row" id="headerContainer" position="fixed">
     </div>
-
-    <div id="page-content-wrapper">
-      <div class="container-fluid">
-
-        <!-- Header row -->
-        <div class="row">
-          <!-- <div class="col-lg-1"></div> -->
-          <div class="col-lg-8">
-            <!-- Search bar at the top -->
-            <form onsubmit="search()" align="center">
-               <div class="input-group">
-                 <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
-                 <div class="input-group-btn">
-                   <button class="btn btn-info">
-                   <span class="glyphicon glyphicon-search"></span>
-                   </button>
-                 </div>
-               </div>
-            </form>
-          </div>
-          <div class="col-lg-3"></div>
-          <div class="col-lg-1">
-            <!-- Profile icon at the top -->
-            <div class="dropdown">
-              <img src="./images/profile.png" height="34px" class="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
-                <li class="dropdown-header">Welcome, Jeb Tree!</li>
-                <li role="separator" class="divider"></li>
-                <li><a href="./settings.html">Settings</a></li>
-                <li><a href="./logout.html">Logout</a></li>
-              </ul>
-            </div>
-          </div>
+    <div class="row" id="page">
+      <div id="wrapper" class="toggled">
+        <div id="sidebar-wrapper">
         </div>
-
-        <!-- Page content -->
+      </div>
+      <div id="page-content-wrapper">
         <div class="row">
-          <div class="col-lg-10">
-            <h1> Team Videos </h1>
-          </div>
-          <div class="col-lg-3">
-            <br>
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <!-- Page content goes here -->
             <!-- Filter -->
             <div class="dropdown" id="filter">
               <button class="btn btn-default dropdown-toggle" type="button" id="filterBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -103,13 +40,11 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="filterBtn">
                 <li><a href="javascript:void(0);">Athlete</a></li>
-                <li><a href="javascript:void(0);">Recent</a></li>
                 <li><a href="javascript:void(0);">Tournament (A-Z)</a></li>
+                <li><a href="javascript:void(0);">Recent</a></li>
               </ul>
             </div>
             <br>
-          </div>
-          <div class="col-lg-10">
             <!-- 1 -->
             <div class="media" id="a">
               <div class="media-left media-middle">
@@ -212,78 +147,43 @@
               </div>
               <br>
             </div>
-            <!-- 7 -->
-            <!-- <div class="media" id="g">
-              <div class="media-left media-middle">
-                <a href="viewvideo2.html">
-                  <img class="media-object" src="./images/team7.png">
-                </a>
-              </div>
-              <div class="media-body">
-                <a href="viewvideo2.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
-                <span class="media-text">
-                  Jeb Tree<br>
-                  3 months ago<br>
-                  Jeb started off the match strong against Villanova with a 11-9 win - he opened up the score more with increased efficiency on the ....
-                </span>
-              </div>
-            </div>
-            <br> -->
-            <!-- 8 -->
-            <!-- <div class="media" id="h">
-              <div class="media-left media-middle">
-                <a href="viewvideo2.html">
-                  <img class="media-object" src="./images/team8.png">
-                </a>
-              </div>
-              <div class="media-body">
-                <a href="viewvideo2.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
-                <span class="media-text">
-                  Jeb Tree<br>
-                  3 months ago<br>
-                  Jeb started off the match strong against Villanova with a 11-9 win - he opened up the score more with increased efficiency on the ....
-                </span>
-              </div>
-            </div>
-            <br> -->
-            <!-- <center><button class="btn btn-default">
-              Load more
-            </button></center> -->
-            <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
           </div>
+          <div class="col-lg-2"></div>
         </div>
       </div>
     </div>
-
+    <div class="row" id="footerContainer"></div>
   </div>
-
+  <script src="js/baseTemplate.js"></script>
   <script>
-    $('#filter .dropdown-menu a').click(function(evt){
-      $("#currentFilter").text(evt.currentTarget.innerHTML);
-      if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
-        $("#c").remove().insertAfter("#b");
-        $("#f").remove().insertAfter("#c");
-        $("#a").remove().insertAfter("#f");
-        $("#d").remove().insertAfter("#a");
-        $("#e").remove().insertAfter("#d");
-      } else if (evt.currentTarget.innerHTML == "Recent") {
-        $("#b").remove().insertAfter("#a");
-        $("#c").remove().insertAfter("#b");
-        $("#f").remove().insertAfter("#c");
-        $("#d").remove().insertAfter("#f");
-        $("#e").remove().insertAfter("#d");
-      } else {
-        $("#b").remove().insertAfter("#a");
-        $("#c").remove().insertAfter("#b");
-        $("#d").remove().insertAfter("#c");
-        $("#e").remove().insertAfter("#d");
-        $("#f").remove().insertAfter("#e");
-      }
+    $(document).ready(function(e) {
+      loadInHeaderAndFooter();
+      loadInMenu(1);
+
+      $('#filter .dropdown-menu a').click(function(evt){
+        $("#currentFilter").text(evt.currentTarget.innerHTML);
+        if (evt.currentTarget.innerHTML == "Tournament (A-Z)") {
+          $("#c").remove().insertAfter("#b");
+          $("#f").remove().insertAfter("#c");
+          $("#a").remove().insertAfter("#f");
+          $("#d").remove().insertAfter("#a");
+          $("#e").remove().insertAfter("#d");
+        } else if (evt.currentTarget.innerHTML == "Recent") {
+          $("#b").remove().insertAfter("#a");
+          $("#c").remove().insertAfter("#b");
+          $("#f").remove().insertAfter("#c");
+          $("#d").remove().insertAfter("#f");
+          $("#e").remove().insertAfter("#d");
+        } else {
+          $("#b").remove().insertAfter("#a");
+          $("#c").remove().insertAfter("#b");
+          $("#d").remove().insertAfter("#c");
+          $("#e").remove().insertAfter("#d");
+          $("#f").remove().insertAfter("#e");
+        }
+      });
     });
-    $('#profile').css('cursor', 'pointer');
-
   </script>
-
 </body>
 
 </html>
