@@ -30,3 +30,7 @@
 a {
  color:#31B0D5;
 }
+
+#hidden-anchor {
+  display:none;
+}
