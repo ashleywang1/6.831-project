@@ -62,4 +62,10 @@
   padding-bottom: 8px;
 }
 
+.videocontent {
 
+}
+
+.video-js .vjs-big-play-button {
+  display:inline;
+}
