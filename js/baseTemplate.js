@@ -10,7 +10,7 @@ function loadInHeaderAndFooter() {
 	    window.location="https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE";
 	  });
 	});
-	$('#footerContainer').load('baseTemplate.html footer');
+	$('#footerContainer').load('baseTemplate.html #footerContainer');
 }
 
 function loadInMenu(highlight_index=null) {
