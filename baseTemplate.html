@@ -31,7 +31,7 @@
       </div>
       <div class="col-xs-6">
         <!-- Search bar at the top -->
-        <form id="searchBar" onsubmit="search()" align="center">
+        <div id="searchBar" align="center">
            <div class="input-group">
              <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
              <div class="input-group-btn">
@@ -40,7 +40,7 @@
                </button>
              </div>
            </div>
-        </form>
+        </div>
       </div>
       <div class="col-xs-2">
         <button id="uploadVideo" title="Upload" class="btn-lg btn-borderless"><span class="glyphicon glyphicon-upload"></span></button>
@@ -96,23 +96,17 @@
         </div>
       </div>
     </div>
-    <footer align="right" style="margin:40px; color:#808B96;">
-      <p>Created by: Ashley Wang, Heeyoon Kim, Kelly Qi, Rui Song</p>
-      <p>Contact information: <a href="mailto:bfs@mit.edu">
-      bfs@mit.edu</a>.</p>
-    </footer>
+    <div class="row" id="footerContainer" position="fixed">
+      <div class="col-xs-8"></div>
+      <div class="col-xs-4">
+        <footer align="right" style="font-size: 12px; margin:40px; color:#808B96;">
+          <p>Created by: Ashley Wang, Heeyoon Kim, Kelly Qi, Rui Song</p>
+          <p>Contact information: <a href="mailto:bfs@mit.edu">
+          bfs@mit.edu</a>.</p>
+        </footer>
+      </div>
+    </div>
   </div>
-  <script>
-    // Button Events
-    $(document).on('click', "#uploadVideo", function(evt){
-      window.location="https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE";
-    });
-    
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-  </script>
 </body>
 
 </html>

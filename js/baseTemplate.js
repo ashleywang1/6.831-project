@@ -9,8 +9,15 @@ function loadInHeaderAndFooter() {
 	  $(document).on('click', "#uploadVideo", function(evt){
 	    window.location="https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE";
 	  });
+
+	  $(document).on('keydown', "#searchBar", function(evt){
+	  	if (evt.which == 13) {
+	  		window.location="search.html";
+	  	}
+	  });
+
 	});
-	$('#footerContainer').load('baseTemplate.html footer');
+	$('#footerContainer').load('baseTemplate.html #footerContainer');
 }
 
 function loadInMenu(highlight_index=null) {

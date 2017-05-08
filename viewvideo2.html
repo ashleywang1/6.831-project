@@ -6,15 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
   <meta name="6.813 User Interface Project" content="">
-  <meta name="Ashley Wang, Rui Song, Heeyoon Kim, Kely Qi" content="">
-  <title>Better. Faster. Stronger.</title>
+  <meta name="Ashley Wang, Rui Song, Heeyoon Kim, Kelly Qi" content="">
+  <title>BFS</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- animate.css from https://github.com/daneden/animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
   <!-- Custom CSS -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
   <link href="css/bfs.css" rel="stylesheet">
+  <link href="css/popup.css" rel="stylesheet">
+  <link href="css/compare.css" rel="stylesheet">
   
   <!-- Custom CSS for comments section-->
   <link href="css/comments.css" rel="stylesheet">
@@ -30,6 +35,14 @@
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <script src="http://vjs.zencdn.net/5.19.1/video.js"></script>
   <script src='js/videojs-markers.js'></script>
+
+  <!--magnific-popup CSS and JS-->
+  <link href="css/magnific-popup.css" rel="stylesheet">
+  <script src="js/magnific-popup.js"></script>
+
+  <!--NOTE: We use the videojs-framebyframe plugin: https://github.com/erasche/videojs-framebyframe-->
+  <!--videojs.framebyframe.js-->
+  <script src="js/videojs-framebyframe.js"></script>
 
   <!-- jQuery -->
   <!-- <script src="js/jquery.js"></script> -->
@@ -51,16 +64,18 @@
         <div class="row">
           <div id="menu-margin" class="col-lg-1"></div>
           <div class="col-lg-6">
+          <div id="wrapper">
             <div id="videoContainer">
-              <video id="my-video" class="video-js" controls preload="auto" width="663" data-setup='{ "playbackRates": [0.5, 1, 2] , "fluid":true}'>
+              <video id="my-video" class="video-js vjs-default-skin vjs-16-9 vjs-big-play-centered" controls preload="auto" data-setup='{ "playbackRates": [0.25,0.5,0.75, 1]}'>
 
-                <source src="https:/dl.dropboxusercontent.com/s/upfg0t49n1it7id/Foil2.mp4?dl=0" type="video/mp4">
+                <source src="https://dl.dropboxusercontent.com/s/upfg0t49n1it7id/Foil2.mp4" type="video/mp4">
 
                 <p class="vjs-no-js">
                   To view this video please enable JavaScript, and consider upgrading to a web browser that
                   <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                 </p>
               </video>
+            </div>
             </div>
             <div>
               <h3> Princeton Tournament Match #1 </h3>
@@ -85,6 +100,23 @@
             <div id="comments">
             </div>
           </div>
+          <!-- Popup compare -->
+          <a href="#test-popup" class="open-popup-link" id="hidden-anchor">Open player</a>
+          <div id="test-popup" class="player mfp-hide animated fadeIn">
+            <section><div id="one">You</div>
+            <div id="two">Pro</div></section>
+            <video id="example_video_1" class="video-js" controls preload="auto" width="663" data-setup='{ "playbackRates": [0.25, 0.50, 0.75, 1], "fluid":true}'>
+
+              <source src="https://dl.dropboxusercontent.com/s/oirs3criyqcaxm1/comp1.mp4" type="video/mp4">
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>
+<!--             <section id="display-surround">
+ -->              <div id="display-comment">Cheese</div>
+<!--             </section>         
+ -->          </div>
         </div>
       </div>
     </div>
@@ -104,16 +136,50 @@
       {time: 207,  text: "body too leaned forward", coach: "Clinton", end_time: 212}
     ];
   </script>
-  <script src="js/video.js"></script>
+  <script src="js/video.js"></script>s
   <script>
+    var markers1 = [
+      {time: 13, text: "advance is OK, knees could be more bent, maintain more distance between front and back foot", 
+      coach: "Clinton", end_time: 16},
+      {time: 18,  text: " advance + lunge, too slow", coach: "Kennedy", end_time: 23},
+      {time: 39,text: "twitched before lunge. lunge bad, want arms to help", coach: "Clinton", end_time: 44},
+      {time: 51,  text: " too many advances", coach: "Clinton", end_time: 56},
+      {time: 131,  text: "advance, feet come too close together, basically walking in a straight line", coach: "Kennedy", end_time: 136},
+      {time: 165,  text: "flèche try, didn’t work out, PARRIED ", coach: "Clinton", end_time: 170},
+      {time: 183,  text: "lunge, too low on the knees, leg movement is too exaggerated, trying to feint", coach: "Kennedy", end_time: 188},
+      {time: 207,  text: "body too leaned forward", coach: "Clinton", end_time: 212}
+    ];
+
+    var markersDict = {13:0,18:1,39:2,51:3,131:4,165:5,183:6,207:7};
+
     $(document).ready(function(){
       loadInHeaderAndFooter();
       loadInMenu();
-      
-    });
 
-    $(document).on('click', '.compare-btn', function() {
-      window.location.href = "./compare.html";
+      //Adapted from: https://erasche.github.io/videojs-framebyframe/
+      var coolVideo = videojs('example_video_1', {
+        controls: true,
+        preload: 'auto',
+        plugins: {
+          framebyframe: {
+            fps: 23.98,
+            steps: [{
+              text: '-1F',
+              step: -1,
+              index: 3
+            }, {
+              text: '+1F',
+              step: 1,
+              index: 4
+            }, ],
+          }
+        },
+        //removing volume control button
+        controlBar: {
+          volumeMenuButton: false,
+          remainingTimeDisplay: false
+        }
+      });   
     });
 
     $(document).on('click', '#menu-toggle', function() {
@@ -134,7 +200,40 @@
       $(".priv button").html(selection + " <span class=\"caret\"></span>");
     });
 
+    videojs.options.flash.swf = "video-js.swf";
+
+    $(document).on('click', '.compare-btn', function() {
+      var markerTime = parseInt($(this).attr('id').match(/\d+/));
+      var markerId = markersDict[markerTime];
+
+      // var item = markers1[markerId].text
+      var item = "<b>" + Math.floor(markers1[markerId].time/60) + ":" + formatMinutes(markers1[markerId].time%60) + "</b>: " + markers1[markerId].text;
+      $("#display-comment").html(item);
+      $('.open-popup-link')[0].click();
+    });
+
+    $('.open-popup-link').magnificPopup({
+      type: 'inline',
+      midClick: true,
+      showCloseBtn:false
+    });
+
+    $('.open-popup-link').on('click', function() {
+      videojs('my-video').pause();
+      videojs('example_video_1').play();
+      videojs('example_video_1').pause();
+    })
+
   </script>
+
+  <style>
+    .player {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      background:black;
+    }
+  </style>
 
 </body>
 

@@ -42,17 +42,6 @@ player.markers({
     $(this).css("background-color", "#CCFFFF");
     expandComment(marker.time);
     player.play();
-
-
-
-    setTimeout(function(){
-      // condense this comment
-      $("#" + marker.time).addClass("truncate");
-      $("#" + marker.time).removeAttr("style", "background-color");
-      $("#compare-btn" + marker.time).css("display", "none");
-      $("#coach-contact" + marker.time).css("display", "none");
-
-    }, 4000);
   },
   markers: markers
 });
