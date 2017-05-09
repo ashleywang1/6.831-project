@@ -27,7 +27,7 @@
         <!-- Menu Toggle -->
         <div id="header">
           <button id="menu-toggle" class="btn-borderless"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
-          BFS
+          <a href="index.html"><img src="images/logo.png" width="65px"/></a>
         </div>
       </div>
       <div class="col-xs-6">
@@ -43,19 +43,25 @@
            </div>
         </div>
       </div>
-      <div class="col-xs-2">
-        <button id="uploadVideo" title="Upload" class="btn-lg btn-borderless"><span class="glyphicon glyphicon-upload"></span></button>
-        <button id="notifications" class="btn-lg btn-borderless dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span></button>
-        <ul class="dropdown-menu">
-          <li id="notification" style="margin-left:10px;"class="dropdown-header">No new videos yet!</li>
-        </ul>
+      <div class="col-xs-1">
+        <div style="float:right;">
+          <button id="uploadVideo" title="Upload" class="btn-lg btn-borderless"><span class="glyphicon glyphicon-upload"></span></button>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <div style="float:left;">
+          <button id="notifications" class="btn-lg btn-borderless dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span></button>
+          <ul class="dropdown-menu">
+            <li id="notification" style="margin-left:10px;"class="dropdown-header">No new videos yet!</li>
+          </ul>
+        </div>
       </div>
       <div class="col-xs-1">
         <div class="dropdown-toggle" data-toggle="dropdown">
           <div id="warmWelcome"> Welcome, Jeb!</div>
         </div>
         <ul style="margin-top:50px;margin-left:4px;" class="dropdown-menu">
-          <li><a href="./settings.html">Settings</a></li>
+          <li><a href="./settings.html">Profile</a></li>
           <li><a href="./logout.html">Logout</a></li>
         </ul>
       </div>
@@ -63,7 +69,7 @@
       <div class="col-xs-1">
         <!-- Profile icon -->
         <div id="profile" align="right">
-          <div class="dropdown-toggle" data-toggle="dropdown">
+          <div class="dropdown-toggle" style="float:right" data-toggle="dropdown">
             <img src="http://www.careerpilot.org.uk/images/profile-icon-lrg.png" height="34px">
           </div>
           <!-- https://cdn.dribbble.com/users/124355/screenshots/2199042/profile_teaser.png -->
