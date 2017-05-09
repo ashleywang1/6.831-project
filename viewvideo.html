@@ -104,7 +104,9 @@
           </div>
           <div class="col-sm-4">
              <!-- Comments component -->
-            <div id="comments">
+             <div class="commentContainer">
+              <div id="comments">
+              </div>
             </div>
           </div>
           <!-- Popup compare -->
@@ -236,6 +238,12 @@
       videojs('example_video_1').play();
       videojs('example_video_1').pause();
     })
+
+    $(window).resize(function() {
+    $('#comments').height($('#videoContainer').height());
+    });
+
+  $(window).trigger('resize');
 
   </script>
 
