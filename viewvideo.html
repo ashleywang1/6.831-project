@@ -200,17 +200,17 @@
 
       if (selection == "Team" || selection == "Coaches") {
         $("#notification").text("You've shared a video with the " + selection + "!");
-        $("#notifications").css("color","blue");
+        $("#notifications").html("<span class=\"glyphicon glyphicon-bell\"></span><span class=\"label label-danger\" style=\"font-size:8px\">1</span>")
         $("#privacy-icon").removeClass("glyphicon glyphicon-lock").addClass("glyphicon glyphicon-globe");
       } else {
         $("#notification").text("You've removed a video from Team Videos.");
-        $("#notifications").css("color","blue");
+        $("#notifications").html("<span class=\"glyphicon glyphicon-bell\"></span><span class=\"label label-danger\" style=\"font-size:8px\">1</span>")
         $("#privacy-icon").removeClass("glyphicon glyphicon-globe").addClass("glyphicon glyphicon-lock");
       }
     });
 
     $(document).on('click', '#notifications', function() {
-      $("#notifications").css("color", "");
+      $("#notifications").html("<span class=\"glyphicon glyphicon-bell\"></span>")
     });
 
     videojs.options.flash.swf = "video-js.swf";
