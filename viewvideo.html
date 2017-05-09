@@ -78,7 +78,8 @@
             </div>
             </div>
             <div>
-              <h3> Princeton Tournament Match #1 </h3>
+              <h3><span id="privacy-icon" class="glyphicon glyphicon-lock"></span> Princeton Tournament Match #1 </h3>
+
               <h4> Jeb Tree  - Posted on January 11th, 2017</h4>
               <br>
               <h5> Coach Summary </h5>
@@ -136,7 +137,7 @@
       {time: 207,  text: "body too leaned forward", coach: "Clinton", end_time: 212}
     ];
   </script>
-  <script src="js/video.js"></script>s
+  <script src="js/video.js"></script>
   <script>
 
     var markersDict = {13:0,18:1,39:2,51:3,131:4,165:5,183:6,207:7};
@@ -187,6 +188,20 @@
     $(document).on('click', '.priv .dropdown-menu a', function(evt) {
       var selection = evt.currentTarget.innerHTML;
       $(".priv button").html(selection + " <span class=\"caret\"></span>");
+
+      if (selection == "Team" || selection == "Coaches") {
+        $("#notification").text("You've shared a video with the " + selection + "!");
+        $("#notifications").css("color","blue");
+        $("#privacy-icon").removeClass("glyphicon glyphicon-lock").addClass("glyphicon glyphicon-globe");
+      } else {
+        $("#notification").text("You've removed a video from Team Videos.");
+        $("#notifications").css("color","blue");
+        $("#privacy-icon").removeClass("glyphicon glyphicon-globe").addClass("glyphicon glyphicon-lock");
+      }
+    });
+
+    $(document).on('click', '#notifications', function() {
+      $("#notifications").css("color", "");
     });
 
     videojs.options.flash.swf = "video-js.swf";
