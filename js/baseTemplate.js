@@ -7,7 +7,11 @@ function loadInHeaderAndFooter() {
 	  });
 
 	  $(document).on('click', "#uploadVideo", function(evt){
-	    window.location="https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE";
+	  	var widthPop = 500;
+	  	var heightPop = 500;
+	  	var left = (screen.width/2)-(widthPop/2);
+      var top = (screen.height/2)-(heightPop/2);
+	    window.open("https://www.dropbox.com/request/LYTqOXoHqg2PD5SetnuE", 'Upload a video', 'width=500, height=500, top='+top+', left='+left);
 	  });
 
 	  $(document).on('keydown', "#searchBar", function(evt){
