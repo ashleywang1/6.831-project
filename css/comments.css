@@ -12,7 +12,8 @@
 }
 
 #comments {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 100%;
     display: inline-block;
     position: relative;
@@ -33,8 +34,7 @@
 }
 
 .dropdown.priv {
-  margin-top: 15px;
-  margin-bottom: 100px;
+  margin-top: 20px;
 }
 
 .priv-choice {
