@@ -9,6 +9,7 @@
     cursor: hand;
     cursor: pointer;
     text-decoration: underline;
+    padding-left: 10px;
 }
 
 #comments {
@@ -27,6 +28,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 10px;
 }
 
 .compare-btn {
