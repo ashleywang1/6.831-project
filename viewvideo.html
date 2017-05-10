@@ -68,7 +68,9 @@
             <div id="videoContainer">
               <video id="my-video" class="video-js vjs-default-skin vjs-16-9 vjs-big-play-centered" controls preload="auto" data-setup='{ "playbackRates": [0.25,0.5,0.75, 1]}'>
 
-                <source src="https://dl.dropboxusercontent.com/s/wh4g1tobc9i8lph/Amateurs.mp4" type="video/mp4">
+                <source src="https://dl.dropboxusercontent.com/s/br5ffstpvfhd66o/video1.mp4" type="video/mp4">
+
+                https://dl.dropboxusercontent.com/s/br5ffstpvfhd66o/video1.mp4
 
                 <p class="vjs-no-js">
                   To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -117,15 +119,9 @@
             <video id="example_video_1" class="video-js" controls preload="auto" width="663" data-setup='{ "playbackRates": [0.25, 0.50, 0.75, 1], "fluid":true}'>
 
               <source src="https://dl.dropboxusercontent.com/s/oirs3criyqcaxm1/comp1.mp4" type="video/mp4">
-              <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-              </p>
             </video>
-<!--             <section id="display-surround">
- -->              <div id="display-comment">Cheese</div>
-<!--             </section>         
- -->          </div>
+          <div id="display-comment"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -134,31 +130,30 @@
   <script src="js/baseTemplate.js"></script>
   <script>
     var markers = [
-      {time: 13, text: "advance is OK, knees could be more bent, maintain more distance between front and back foot", 
-      coach: "Clinton", end_time: 16},
-      {time: 18,  text: " advance + lunge, too slow", coach: "Kennedy", end_time: 23},
-      {time: 39,text: "twitched before lunge. lunge bad, want arms to help", coach: "Clinton", end_time: 44},
-      {time: 51,  text: " too many advances", coach: "Clinton", end_time: 56},
-      {time: 57,  text: " too many advances", coach: "Clinton", end_time: 60},
-      {time: 62,  text: "advance, feet come too close together, basically walking in a straight line", coach: "Kennedy", end_time: 64},
-      {time: 65,  text: "flèche try, didn’t work out, PARRIED ", coach: "Clinton", end_time: 70},
-      {time: 73,  text: "lunge, too low on the knees, leg movement is too exaggerated, trying to feint", coach: "Kennedy", end_time: 75}, 
-      {time: 165,  text: "flèche try, didn’t work out, PARRIED ", coach: "Clinton", end_time: 170},
-      {time: 183,  text: "lunge, too low on the knees, leg movement is too exaggerated, trying to feint", coach: "Kennedy", end_time: 188},
-      {time: 207,  text: "body too leaned forward", coach: "Clinton", end_time: 212}
+      {time: 13, text: "your <b>advance</b> needs more bent knees", coach: "Coach Clinton", end_time: 16, compare:true},
+      {time: 42,text: "your movement was too slow and obvious to the opponent", coach: "Coach Clinton", end_time: 45, compare:false},
+      {time: 135,  text: "good forward drive, surprised your opponent", coach: "Coach Clinton", end_time: 139, compare:false},
+      {time: 165,  text: "your weapon should never be pointed at the ground", coach: "Coach Clinton", end_time: 167, compare:false},
+      {time: 168,  text: "please improve your <b>riposte</b> technique", coach: "Coach Kennedy", end_time: 172, compare:true},
+      {time: 183,  text: "your <b>lunge</b> is much too low with too exaggerated leg movements", coach: "Coach Kennedy", end_time: 188, compare:true},
+      {time: 218,  text: "good forward movement", coach: "Coach Kennedy", end_time: 220, compare:false}, 
+      {time: 298,  text: "never kick at your opponent", coach: "Coach Clinton", end_time: 170, compare:false},
+      {time: 350,  text: "don't stop moving", coach: "Coach Kennedy", end_time: 188, compare:false}
     ];
   </script>
   <script src="js/video.js"></script>
   <script>
 
-    var markersDict = {13:0,18:1,39:2,51:3,57:4, 62:5, 65:6, 73:7, 165:8,183:9,207:10};
+    var markersDict = {13:0, 42:1, 135:2, 165:3, 168:4, 183:5, 218:6, 298:7, 350:8};
+    var videoDict = {13:0, 168:1, 183:2};
+    var videoList = ["https://dl.dropboxusercontent.com/s/o1omrylrchhskvt/comp2.mp4", "https://dl.dropboxusercontent.com/s/dgb0czf5not8rzx/comp3.mp4", "https://dl.dropboxusercontent.com/s/oirs3criyqcaxm1/comp1.mp4"];
 
     $(document).ready(function(){
       loadInHeaderAndFooter();
       loadInMenu(0);
 
       //Adapted from: https://erasche.github.io/videojs-framebyframe/
-      var coolVideo = videojs('example_video_1', {
+      var video1 = videojs('example_video_1', {
         controls: true,
         preload: 'auto',
         plugins: {
@@ -178,9 +173,10 @@
         //removing volume control button
         controlBar: {
           volumeMenuButton: false,
-          remainingTimeDisplay: false
+          remainingTimeDisplay: false,
+          currentTimeDisplay:false
         }
-      });   
+      });     
     });
 
     $(document).on('click', '#menu-toggle', function() {
@@ -221,10 +217,14 @@
       var markerTime = parseInt($(this).attr('id').match(/\d+/));
       console.log(markerTime)
       var markerId = markersDict[markerTime];
+      var videoId = videoDict[markerTime]
+      var videoLink = videoList[videoId];
 
       // var item = markers[markerId].text
-      var item = "<b>" + Math.floor(markers[markerId].time/60) + ":" + formatMinutes(markers[markerId].time%60) + "</b>: " + markers[markerId].text;
+      var item = "<i>" + Math.floor(markers[markerId].time/60) + ":" + formatMinutes(markers[markerId].time%60) + "</i>: " + markers[markerId].text;
       $("#display-comment").html(item);
+      console.log(videoLink);
+      videojs('example_video_1').src(videoLink);
       $('.open-popup-link')[0].click();
     });
 
@@ -237,7 +237,10 @@
     $('.open-popup-link').on('click', function() {
       videojs('my-video').pause();
       videojs('example_video_1').play();
-      videojs('example_video_1').pause();
+      setTimeout(function() {
+        videojs('example_video_1').pause();
+        videojs('my-video').pause();
+      }, 100);
     })
 
     $(window).resize(function() {
@@ -254,6 +257,11 @@
       margin-left: auto;
       margin-right: auto;
       background:black;
+    }
+
+    .video-js .vjs-current-time,
+    .vjs-no-flex .vjs-current-time {
+      display: block;
     }
   </style>
 

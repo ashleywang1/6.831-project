@@ -220,6 +220,8 @@
         $("#e").hide();
         $("#f").hide();
         $("#g").hide();
+        $('#page2').removeClass('active');
+        $('#page1').addClass('active');
       });
       $('#page2').click(function(evt) {
         $("#a").hide();
@@ -229,6 +231,8 @@
         $("#e").show();
         $("#f").show();
         $("#g").show();
+        $('#page1').removeClass('active');
+        $('#page2').addClass('active');
       });
     });
   </script>
