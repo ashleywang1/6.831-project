@@ -151,7 +151,7 @@
   <script src="js/video.js"></script>
   <script>
 
-    var markersDict = {13:0,18:1,39:2,51:3,131:4,165:5,183:6,207:7};
+    var markersDict = {13:0,18:1,39:2,51:3,57:4, 62:5, 65:6, 73:7, 165:8,183:9,207:10};
 
     $(document).ready(function(){
       loadInHeaderAndFooter();
@@ -219,6 +219,7 @@
 
     $(document).on('click', '.compare-btn', function() {
       var markerTime = parseInt($(this).attr('id').match(/\d+/));
+      console.log(markerTime)
       var markerId = markersDict[markerTime];
 
       // var item = markers[markerId].text
