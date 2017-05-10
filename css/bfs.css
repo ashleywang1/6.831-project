@@ -119,8 +119,14 @@
 }
 
 /*Video*/
-.media-text {
+.media-info-text {
 	color: silver;
+    font-size: 13px;
+}
+
+.media-text {
+    color: gray;
+    font-size: 14px;
 }
 
 #videoContainer{

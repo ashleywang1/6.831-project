@@ -42,7 +42,7 @@
                 <li><a href="javascript:void(0);">Recent</a></li>
               </ul>
             </div>
-            <div style="float:right; font-size:12px;"> 8 videos found</div>
+            <div style="float:right; font-size:12px;"> 7 videos found</div>
           </div>
           <div class="col-xs-4"></div>
         </div>
@@ -59,9 +59,10 @@
               </div>
               <div class="media-body">
                 <a href="viewvideo.html"><h4 class="media-heading">Princeton Tournament Match #1</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 2 months ago<br>
+                </span>
                 <span class="media-text">
-                  Jeb Tree<br>
-                  2 months ago<br>
                   Cornell B1 was the opponent in the semifinals. Jeb had a tough 4-7 loss due to his opponents...
                 </span>
               </div>
@@ -76,9 +77,10 @@
               </div>
               <div class="media-body">
                 <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Quarterfinals Match</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 3 months ago<br>
+                </span>
                 <span class="media-text">
-                  Jeb Tree<br>
-                  3 months ago<br>
                   Jeb was up against another bigger and experienced fighter. Jeb controlled the space very well, but had trouble creating danger. As in his previous match, he shut off his opponent by closing the distance many times effectively....
                 </span>
               </div>
@@ -93,9 +95,10 @@
               </div>
               <div class="media-body">
                 <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #2</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 3 months ago<br>
+                </span>
                 <span class="media-text">
-                  Jeb Tree<br>
-                  3 months ago<br>
                   Jeb showed his incredible footwork again in this match. At first he was having a little trouble getting past his StonyBrook's....
                 </span>
               </div>
@@ -110,10 +113,65 @@
               </div>
               <div class="media-body">
                 <a href="viewvideo.html"><h4 class="media-heading">Cornell Tournament Match #1</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 3 months ago<br>
+                </span>
                 <span class="media-text">
-                  Jeb Tree<br>
-                  3 months ago<br>
                   Jeb started off the match strong against Villanova with a 11-9 win - he opened up the score more with increased efficiency on the ....
+                </span>
+              </div>
+              <br>
+            </div>
+            <!-- 5 -->
+            <div class="media" id="e" style="display:none;">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team1.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Yale Tournament Match #3</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 4 months ago<br>
+                </span>
+                <span class="media-text">
+                  Jeb started off the match strong against Austin with a 12-0 win - he did really well this round....
+                </span>
+              </div>
+              <br>
+            </div>
+            <!-- 6 -->
+            <div class="media" id="f" style="display:none;">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team2.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Yale Tournament Match #2</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 4 months ago<br>
+                </span>
+                <span class="media-text">
+                  Jeb started off the match strong against Illinois with a 2-0 win - This was pretty close....
+                </span>
+              </div>
+              <br>
+            </div>
+            <!-- 7 -->
+            <div class="media" id="g" style="display:none;">
+              <div class="media-left media-middle">
+                <a href="viewvideo.html">
+                  <img class="media-object" src="./images/team3.png">
+                </a>
+              </div>
+              <div class="media-body">
+                <a href="viewvideo.html"><h4 class="media-heading">Yale Tournament Match #1</h4></a>
+                <span class="media-info-text">
+                  Jeb Tree • 4 months ago<br>
+                </span>
+                <span class="media-text">
+                  This was Jeb's first match, after having joined the team only a couple of weeks ago...
                 </span>
               </div>
               <br>
@@ -125,10 +183,10 @@
     </div>
     <div class="row"> <!-- pages -->
       <center>
-        <button class="btn btn-info active" type="button" id="loadMoreButton">
+        <button class="btn btn-info active" type="button" id="page1">
           1
         </button>
-        <button class="btn btn-info" type="button" id="loadMoreButton">
+        <button class="btn btn-info" type="button" id="page2">
           2
         </button>
       </center>
@@ -152,6 +210,25 @@
           $("#c").remove().insertAfter("#b");
           $("#d").remove().insertAfter("#c");
         }
+      });
+
+      $('#page1').click(function(evt) {
+        $("#a").show();
+        $("#b").show();
+        $("#c").show();
+        $("#d").show();
+        $("#e").hide();
+        $("#f").hide();
+        $("#g").hide();
+      });
+      $('#page2').click(function(evt) {
+        $("#a").hide();
+        $("#b").hide();
+        $("#c").hide();
+        $("#d").hide();
+        $("#e").show();
+        $("#f").show();
+        $("#g").show();
       });
     });
   </script>
